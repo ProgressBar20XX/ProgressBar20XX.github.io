@@ -1,0 +1,28 @@
+name: auto-email
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run a one-line script
+      run: echo Hello, world!
+    - name: Run a multi-line script
+      run: |
+        echo Add other actions to build,
+        echo test, and deploy your project.
+    - name: Send mail
+      uses: dawidd6/action-send-mail@master
+      with:
+          server_address: ${{secrets.ADDRESS}}
+          server_port: 465
+          username: ${{secrets.USERNAME}}
+          password: ${{secrets.PASSWORD}}
+          subject: ${{github.repository}}
+          body: ${{matrix.body}}
+          to: ${{github.event.pusher.email}},${{secrets.USERNAME}}
+          from: github-actions
