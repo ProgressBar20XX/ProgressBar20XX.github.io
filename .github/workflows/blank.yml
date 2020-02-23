@@ -1,4 +1,4 @@
-name: CI
+name: Hello Github Action-CI
 
 on: [push]
 
@@ -13,9 +13,8 @@ jobs:
       run: echo Hello, world!
     - name: Run a multi-line script
       run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
-        date
+        echo this is a simple workflow which will run automatically upon each push.
+        echo -n new push at >> github-action.log
         date >> github-action.log
         date
     - name: Commit files
