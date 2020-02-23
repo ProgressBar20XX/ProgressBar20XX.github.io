@@ -1,0 +1,30 @@
+name: timer
+
+
+on:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    # every five minute
+    - cron:  '*/6 * * * *'
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run a multi-line script
+      run: |
+        echo this is a simple workflow which will run automatically every 6 minutes.
+        echo -n auto write at  >> github-action.log
+        date >> github-action.log
+        date
+    - name: Commit files
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git commit -m "Add changes by Action" -a
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
