@@ -50,7 +50,7 @@ jobs:
 
     - name: Send mail
       env:
-        parameter: ${{ "This is A String"  }}
+        parameter: ${{ 'This is A String'  }}
       uses: dawidd6/action-send-mail@master
       with:
         server_address: smtp.gmail.com
