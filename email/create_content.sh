@@ -17,3 +17,8 @@ receiver="Mike"
 sender="Radish Meeting"
 text=`cat template.html`
 echo $text >> content.html
+
+
+text="Dear $receiver,<br> Welcome to join my email list.<br> Hope you enjoy it!<br> check out the parameter: ./create_content.sh , <br> from<br> ProgressBar20XX ( $sender ) <br> Mon Feb 24 18:35:17 UTC 2020"
+echo >> content.html
+echo $text >> content.html
