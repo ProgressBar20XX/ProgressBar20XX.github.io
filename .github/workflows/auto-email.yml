@@ -27,8 +27,12 @@ jobs:
         echo "<br>" >>content.html
         echo $PWD  >>content.html
         cd ..
-        echo "<br>" >>content.html
-        ls >> content.html
+        echo "<br>" >>ProgressBar20XX.github.io/content.html
+        echo $PWD  >> ProgressBar20XX.github.io/content.html
+        echo "<br>" >>ProgressBar20XX.github.io/content.html
+        ls >> ProgressBar20XX.github.io/content.html
+        echo "<br>end of test<br>" >>ProgressBar20XX.github.io/content.html
+        cd ProgressBar20XX.github.io/
       #uses: lafernando/github-action-bash/@master
       #with:
       #  script: email/create-content.sh
