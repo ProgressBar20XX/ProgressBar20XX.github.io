@@ -1,4 +1,4 @@
-name: Hello Github Action-CI
+name: Hello Github Action-This is just a template
 
 on: [push]
 
