@@ -9,9 +9,14 @@ jobs:
 
     steps:
     - name: Bash Script to create content
-      uses: lafernando/github-action-bash/@master
-      with:
-        script: email/create-content.sh
+      run: |
+        ls -l
+        chmod +x email/create-content.sh
+        sh ./email/create-content.sh
+        ls -l
+      #uses: lafernando/github-action-bash/@master
+      #with:
+      #  script: email/create-content.sh
 
 
     - uses: actions/checkout@v2
