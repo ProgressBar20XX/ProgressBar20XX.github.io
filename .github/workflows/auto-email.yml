@@ -11,7 +11,7 @@ jobs:
     - name: create content
 
       run: |
-        outfile = email/content.html
+        outfile=email/content.html
         echo stuff >> ${{outfile}}
         echo more >> $outfile
 
