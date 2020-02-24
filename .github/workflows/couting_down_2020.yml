@@ -1,6 +1,5 @@
 name: counting down 2020 at eveyr push and send emails
 
-
 on:
   [push]
 
@@ -14,7 +13,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run your script here
       run: |
-        echo "create content in content.html"
+        echo "create content in counting_down_2020.html"
         cd email/
         ./counting_down_2020.sh
     # commit and push if needed
@@ -22,7 +21,7 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git commit -m "Add changes by Action" -a
+        git commit -m "Add changes by Action: counting down 2020" -a
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
@@ -35,7 +34,7 @@ jobs:
         server_port: 465
         username: ${{secrets.MAIL_USERNAME}}
         password: ${{secrets.MAIL_PASSWORD}}
-        subject: Hour report - Github Actions job result
+        subject: Counting Down 2020
         # Literal body:
         # body: Another hour has just past.
         # Read file contents as body:
