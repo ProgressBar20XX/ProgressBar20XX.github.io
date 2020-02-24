@@ -1,8 +1,9 @@
 name: counting down 2020 at eveyr push and send emails
 
 on:
-  [push]
-
+  push:
+  schedule:
+      - cron: '0 10 * * *' # Once per day at 18:00 PST
 jobs:
   build:
 
