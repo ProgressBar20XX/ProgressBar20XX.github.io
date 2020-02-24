@@ -8,6 +8,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: create content
+
+      run: |
+        cd email
+	./create_content para
+	cd ..
     - uses: actions/checkout@v2
 
     - name: Send mail
@@ -19,9 +25,9 @@ jobs:
         password: ${{secrets.MAIL_PASSWORD}}
         subject: auto email - Github Actions job result
         # Literal body:
-        body: You got this email at every push. Build job of ${{github.repository}} completed successfully!
+        # body: You got this email at every push. Build job of ${{github.repository}} completed successfully!
         # Read file contents as body:
-        # body: file://README.md
+        body: file://email/content.html
         to: 240155787@qq.com,weilei.zeng@foxmail.com
         from: ProgressBar20XX
         # Optional content type:
