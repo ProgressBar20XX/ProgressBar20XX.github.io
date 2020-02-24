@@ -59,7 +59,7 @@ jobs:
         password: ${{secrets.MAIL_PASSWORD}}
         subject: auto email - Github Actions job result
         # Literal body:
-        body: You get this $parameter  or ${{parameter}}
+        body: You get this $parameter  
         
         # body: You got this email at every push. Build job of ${{github.repository}} completed successfully!
         # Read file contents as body:
