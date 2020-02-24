@@ -11,7 +11,11 @@ jobs:
     - name: create content
 
       run: |
-        outfile=email/content.html
+        # it seems I cannot use emacs to edit it, whcih produce tab syntax error
+        cd email
+        ./create-content.sh
+        cd ..
+        outfile="email/content.html"
         echo stuff >> $outfile
         echo more >> $outfile
 
