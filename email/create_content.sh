@@ -1,4 +1,4 @@
-echo Dear XXX, > content.html
+echo "Dear XXX,<br>" > content.html
 echo >> content.html
 echo Welcome to join my email list. >>content.html
 echo >> content.html
@@ -8,3 +8,5 @@ echo >> content.html
 echo from >> content.html
 echo >> content.html
 echo ProgressBar20XX >> content.html
+echo >> content.html
+date >> content.html
