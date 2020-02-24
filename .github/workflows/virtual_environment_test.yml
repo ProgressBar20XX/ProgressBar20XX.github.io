@@ -1,0 +1,34 @@
+name: to test the virtual environment
+
+
+on:
+  [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run a multi-line script
+      run: |
+      	echo "my test start here...<br>" >> github-action.log
+	ls >> github-action.log
+	
+        echo -n auto write at  >> github-action.log
+        date >> github-action.log
+        date
+    - name: Commit files
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git commit -m "Add changes by Action" -a
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+    - uses: actions/upload-artifact@v1
+      with:
+        name: my.log
+        path: github-action.log
