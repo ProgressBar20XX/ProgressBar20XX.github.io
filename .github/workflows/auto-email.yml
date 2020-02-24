@@ -9,12 +9,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
 
     - name: Send mail
       uses: dawidd6/action-send-mail@master
@@ -23,9 +17,9 @@ jobs:
         server_port: 465
         username: ${{secrets.MAIL_USERNAME}}
         password: ${{secrets.MAIL_PASSWORD}}
-        subject: Github Actions job result
+        subject: auto email - Github Actions job result
         # Literal body:
-        body: Build job of ${{github.repository}} completed successfully!
+        body: You got this email at every push. Build job of ${{github.repository}} completed successfully!
         # Read file contents as body:
         # body: file://README.md
         to: 240155787@qq.com,weilei.zeng@foxmail.com
