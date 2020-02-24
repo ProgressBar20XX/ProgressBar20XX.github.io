@@ -10,3 +10,10 @@ echo >> content.html
 echo ProgressBar20XX >> content.html
 echo >> content.html
 date >> content.html
+
+
+# this is my other test
+receiver="Mike"
+sender="Radish Meeting"
+text=`cat template.html`
+echo $text >> content.html
