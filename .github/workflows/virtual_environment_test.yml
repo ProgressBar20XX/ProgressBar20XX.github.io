@@ -10,20 +10,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Run a pre test
-      run: |
-        echo "hello World"
-        touch newfile.txt
-        echo " a test begins" >> newfile.txt
-        ls >> newfile.txt
+    # This step is a "git pull" for me. It check if the new push is "valid", but for me, what is did is to do a "git pull" and sync all the files
     - uses: actions/checkout@v2
-    - name: Run a multi-line script
+    - name: Run your script here
       run: |
-        echo "my test start here...<br>" >> github-action.log
-        ls >> github-action.log
-        echo -n auto write at  >> github-action.log
-        date >> github-action.log
-        date
+        echo "create content in content.html"
+        cd email/
+        ./create_content.sh
+
+    # commit and push if needed
     - name: Commit files
       run: |
         git config --local user.email "action@github.com"
@@ -33,7 +28,3 @@ jobs:
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-    - uses: actions/upload-artifact@v1
-      with:
-        name: my.log
-        path: newfile.txt
