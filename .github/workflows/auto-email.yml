@@ -11,9 +11,10 @@ jobs:
     - name: create content
 
       run: |
-        cd email
-	./create_content para
+        cd email/
+	sh ./create_content.sh
 	cd ..
+	
     - uses: actions/checkout@v2
 
     - name: Send mail
