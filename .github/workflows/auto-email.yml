@@ -12,7 +12,8 @@ jobs:
 
       run: |
         # it seems I cannot use emacs to edit it, whcih produce tab syntax error
-        cd email
+        ls
+        cd email/
         ./create-content.sh
         cd ..
         outfile="email/content.html"
