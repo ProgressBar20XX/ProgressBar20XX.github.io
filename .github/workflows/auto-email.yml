@@ -8,22 +8,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Bash Script
+    - name: Bash Script to create content
       uses: lafernando/github-action-bash/@master
       with:
         script: email/create-content.sh
-
-    - name: create content
-
-      run: |
-        # it seems I cannot use emacs to edit it, whcih produce tab syntax error
-        ls
-        cd /email/
-        ./create-content.sh
-        cd ..
-        outfile="email/content.html"
-        echo stuff >> $outfile
-        echo more >> $outfile
 
 
     - uses: actions/checkout@v2
