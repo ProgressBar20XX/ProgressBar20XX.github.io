@@ -12,7 +12,7 @@ jobs:
 
       run: |
         outfile=email/content.html
-        echo stuff >> ${{outfile}}
+        echo stuff >> $outfile
         echo more >> $outfile
 
 
