@@ -10,7 +10,19 @@ jobs:
     steps:
     - name: Bash Script to create content
       run: |
-        sh ./email/create_content.sh
+        echo "Dear XXX,<br>" > content.html
+        echo >> content.html
+        echo Welcome to join my email list. >>content.html
+        echo >> content.html
+        echo "check out the parameter: $0 , $1" >>content.html
+
+        echo >> content.html
+        echo from >> content.html
+        echo >> content.html
+        echo ProgressBar20XX >> content.html
+        echo >> content.html
+        date >> content.html
+        ls >> content.html
       #uses: lafernando/github-action-bash/@master
       #with:
       #  script: email/create-content.sh
@@ -29,7 +41,8 @@ jobs:
         # Literal body:
         # body: You got this email at every push. Build job of ${{github.repository}} completed successfully!
         # Read file contents as body:
-        body: file://email/content.html
+        # body: file://email/content.html
+        body: file://content.html
         to: 240155787@qq.com,weilei.zeng@foxmail.com
         from: ProgressBar20XX
         # Optional content type:
