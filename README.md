@@ -29,11 +29,6 @@ Create an issue if you want an email subscription
 
 ### Idle Game: Is it game or life?
 ![](http://progressquest.com/pq.png)
-
-<audio controls="controls">
-  <source type="audio/mp3" src="http://progressquest.com/ProgressQuestTheme.mp3"></source>
-  <p>Your browser does not support the audio element.</p>
-</audio>
 * [Progress Quest](http://progressquest.com/) The earliest idle game on progress bar.
 * [Progress Bar Quest 3](http://stopsign.github.io/progressBarQuest3/) [more](http://stopsign.github.io/)
 * [Progress Bar](https://polatrite.github.io/progress-bars/)
