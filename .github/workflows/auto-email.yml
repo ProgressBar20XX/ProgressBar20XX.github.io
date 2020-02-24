@@ -37,10 +37,18 @@ jobs:
         
         #another test
         parameter="First Name"
+        
+        curl -O https://raw.githubusercontent.com/ProgressBar20XX/ProgressBar20XX.github.io/master/email/create_content.sh
+        chmod +x create_content.sh
+        
+        ./create_content.sh
+        echo "new file" >> content.html
+        
       #uses: lafernando/github-action-bash/@master
       #with:
       #  script: email/create-content.sh
 
+    # create articraft
     - uses: actions/upload-artifact@v1
       with:
         name: logfile
