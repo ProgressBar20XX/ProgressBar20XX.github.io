@@ -11,10 +11,11 @@ jobs:
     - name: create content
 
       run: |
-        cd email/
-	sh ./create_content.sh
-	cd ..
-	
+        outfile = email/content.html
+        echo stuff >> outfile
+        echo more >> outfile
+
+
     - uses: actions/checkout@v2
 
     - name: Send mail
