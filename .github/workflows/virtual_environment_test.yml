@@ -13,9 +13,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run a multi-line script
       run: |
-      	echo "my test start here...<br>" >> github-action.log
-	ls >> github-action.log
-	
+        echo "my test start here...<br>" >> github-action.log
+        ls >> github-action.log
         echo -n auto write at  >> github-action.log
         date >> github-action.log
         date
