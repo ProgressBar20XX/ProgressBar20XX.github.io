@@ -1,0 +1,87 @@
+name: auto-email
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Bash Script to create content
+      run: |
+        echo "Dear XXX,<br>" > content.html
+        echo >> content.html
+        echo Welcome to join my email list. >>content.html
+        echo >> content.html
+        echo "check out the parameter: $0 , $1" >>content.html
+
+        echo >> content.html
+        echo from >> content.html
+        echo >> content.html
+        echo ProgressBar20XX >> content.html
+        echo >> content.html
+        date >> content.html
+        echo "<br> start testing... <br>" >>content.html
+        ls >> content.html
+        echo "<br>" >>content.html
+        echo $PWD  >>content.html
+        cd ..
+        echo "<br>" >>ProgressBar20XX.github.io/content.html
+        echo $PWD  >> ProgressBar20XX.github.io/content.html
+        echo "<br>" >>ProgressBar20XX.github.io/content.html
+        ls >> ProgressBar20XX.github.io/content.html
+        echo "<br>end of test<br>" >>ProgressBar20XX.github.io/content.html
+        cd ProgressBar20XX.github.io/
+        
+        
+        #another test
+        parameter="First Name"
+        
+        curl -O https://raw.githubusercontent.com/ProgressBar20XX/ProgressBar20XX.github.io/master/email/create_content.sh
+        chmod +x create_content.sh
+        
+        ./create_content.sh
+        echo "new file" >> content.html
+        
+      #uses: lafernando/github-action-bash/@master
+      #with:
+      #  script: email/create-content.sh
+
+    # create articraft
+    - uses: actions/upload-artifact@v1
+      with:
+        name: logfile
+        path: content.html
+
+    - uses: actions/checkout@v2
+
+    - name: Send mail
+      env:
+        parameter: ${{ 'This is A String'  }}
+        myNull: ${{ null }}
+        myBoolean: ${{ false }}
+        myIntegerNumber: ${{ 711 }}
+        myFloatNumber: ${{ -9.2 }}
+        myHexNumber: ${{ 0xff }}
+        myExponentialNumber: ${{ -2.99e2 }}
+        myString: ${{ 'Mona the Octocat' }}
+        myEscapedString: ${{ 'It''s open source!' }}
+      uses: dawidd6/action-send-mail@master
+      with:
+        server_address: smtp.gmail.com
+        server_port: 465
+        username: ${{secrets.MAIL_USERNAME}}
+        password: ${{secrets.MAIL_PASSWORD}}
+        subject: auto email - Github Actions job result
+        # Literal body:
+        body: You get this "$myString"
+        
+        # body: You got this email at every push. Build job of ${{github.repository}} completed successfully!
+        # Read file contents as body:
+        # body: file://email/content.html
+        #body: file://content.html
+        to: 240155787@qq.com,weilei.zeng@foxmail.com
+        from: ProgressBar20XX
+        # Optional content type:
+        content_type: text/html
