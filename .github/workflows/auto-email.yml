@@ -26,6 +26,9 @@ jobs:
         ls >> content.html
         echo "<br>" >>content.html
         echo $PWD  >>content.html
+        cd ..
+        echo "<br>" >>content.html
+        ls >> content.html
       #uses: lafernando/github-action-bash/@master
       #with:
       #  script: email/create-content.sh
