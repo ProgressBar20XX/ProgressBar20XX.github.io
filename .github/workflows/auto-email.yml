@@ -51,6 +51,14 @@ jobs:
     - name: Send mail
       env:
         parameter: ${{ 'This is A String'  }}
+        myNull: ${{ null }}
+        myBoolean: ${{ false }}
+        myIntegerNumber: ${{ 711 }}
+        myFloatNumber: ${{ -9.2 }}
+        myHexNumber: ${{ 0xff }}
+        myExponentialNumber: ${{ -2.99-e2 }}
+        myString: ${{ 'Mona the Octocat' }}
+        myEscapedString: ${{ 'It''s open source!' }}
       uses: dawidd6/action-send-mail@master
       with:
         server_address: smtp.gmail.com
@@ -59,7 +67,7 @@ jobs:
         password: ${{secrets.MAIL_PASSWORD}}
         subject: auto email - Github Actions job result
         # Literal body:
-        body: You get this $parameter  
+        body: You get this "$myString"
         
         # body: You got this email at every push. Build job of ${{github.repository}} completed successfully!
         # Read file contents as body:
