@@ -22,7 +22,10 @@ jobs:
         echo ProgressBar20XX >> content.html
         echo >> content.html
         date >> content.html
+        echo "<br> start testing... <br>" >>content.html
         ls >> content.html
+        echo "<br>" >>content.html
+        echo $PWD  >>content.html
       #uses: lafernando/github-action-bash/@master
       #with:
       #  script: email/create-content.sh
