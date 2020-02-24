@@ -13,7 +13,7 @@ jobs:
       run: |
         # it seems I cannot use emacs to edit it, whcih produce tab syntax error
         ls
-        cd email/
+        cd /email/
         ./create-content.sh
         cd ..
         outfile="email/content.html"
