@@ -33,6 +33,10 @@ jobs:
         ls >> ProgressBar20XX.github.io/content.html
         echo "<br>end of test<br>" >>ProgressBar20XX.github.io/content.html
         cd ProgressBar20XX.github.io/
+        
+        
+        #another test
+        parameter="First Name"
       #uses: lafernando/github-action-bash/@master
       #with:
       #  script: email/create-content.sh
@@ -53,10 +57,12 @@ jobs:
         password: ${{secrets.MAIL_PASSWORD}}
         subject: auto email - Github Actions job result
         # Literal body:
+        body: You get this $parameter
+        
         # body: You got this email at every push. Build job of ${{github.repository}} completed successfully!
         # Read file contents as body:
         # body: file://email/content.html
-        body: file://content.html
+        #body: file://content.html
         to: 240155787@qq.com,weilei.zeng@foxmail.com
         from: ProgressBar20XX
         # Optional content type:
