@@ -1,0 +1,46 @@
+name: counting down 2020 at eveyr push and send emails
+
+
+on:
+  [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    # This step is a "git pull" for me. It check if the new push is "valid", but for me, what is did is to do a "git pull" and sync all the files
+    - uses: actions/checkout@v2
+    - name: Run your script here
+      run: |
+        echo "create content in content.html"
+        cd email/
+        ./counting_down_2020.sh
+    # commit and push if needed
+    - name: Commit files
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git commit -m "Add changes by Action" -a
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: Send mail
+      uses: dawidd6/action-send-mail@master
+      with:
+        server_address: smtp.gmail.com
+        server_port: 465
+        username: ${{secrets.MAIL_USERNAME}}
+        password: ${{secrets.MAIL_PASSWORD}}
+        subject: Hour report - Github Actions job result
+        # Literal body:
+        # body: Another hour has just past.
+        # Read file contents as body:
+        body: file://email/counting_down_2020.html
+        to: 240155787@qq.com
+        from: ProgressBar20XX
+        # Optional content type:
+        content_type: text/html
