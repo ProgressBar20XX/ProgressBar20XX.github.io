@@ -8,6 +8,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Bash Script
+      uses: lafernando/github-action-bash/@master
+      with:
+        script: email/create-content.sh
+
     - name: create content
 
       run: |
