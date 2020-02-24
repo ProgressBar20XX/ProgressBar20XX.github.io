@@ -10,10 +10,7 @@ jobs:
     steps:
     - name: Bash Script to create content
       run: |
-        ls -l
-        chmod +x ./email/create_content.sh
         sh ./email/create_content.sh
-        ls -l
       #uses: lafernando/github-action-bash/@master
       #with:
       #  script: email/create-content.sh
