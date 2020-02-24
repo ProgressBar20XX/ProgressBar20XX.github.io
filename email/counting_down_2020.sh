@@ -11,16 +11,21 @@ dt_text="there are $dt days left before 2020 ends"
 outfile=counting_down_2020.html
 
 # this is my other test
-receiver="Mike"
+receiver="Mr./Mrs."
 sender="Radish Meeting"
 text=`cat template.html`
 echo $text >> content.html
 
 
-text="Dear $receiver,<br> Welcome to join my email list.<br> Hope you enjoy it!<br> 
-${dt_text} <br>
-check out the parameter: ./create_content.sh , <br> from<br> ProgressBar20XX ( $sender ) <br> Mon Feb 24 18:35:17 UTC 2020"
-echo >> $outfile
+text="Dear $receiver,<br> 
+<h4> ${dt_text} </h4> <br>
+Welcome to join my email list.<br> 
+Hope you enjoy it!<br> 
+from<br> ProgressBar20XX ( $sender ) <br> 
+$( date )
+"
+echo > $outfile
 echo $text >> $outfile
+
 
 
