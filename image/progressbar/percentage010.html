@@ -7,7 +7,7 @@
 }
 
 #myBar {
-  width: 10%;
+  width: 0%;
   height: 30px;
   background-color: #4CAF50;
   text-align: center;
@@ -32,10 +32,10 @@ function move() {
   if (i == 0) {
     i = 1;
     var elem = document.getElementById("myBar");
-    var width = 10;
+    var width = 0;
     var id = setInterval(frame, 10);
     function frame() {
-      if (width >= 100) {
+      if (width >= 20) {
         clearInterval(id);
         i = 0;
       } else {
