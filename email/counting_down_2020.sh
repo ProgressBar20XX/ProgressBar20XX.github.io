@@ -22,9 +22,16 @@ Hope you enjoy it!<br>
 from<br> ProgressBar20XX ( written by $sender ) <br> 
 $( date )
 "
+
+
+bar=`cat template2.html`
+
 # clear the file first and then add the text
 echo > $outfile
 echo $text >> $outfile
+
+echo >>$outfile
+echo $bar >> $outfile
 
 
 
