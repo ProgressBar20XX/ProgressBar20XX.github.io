@@ -1,0 +1,6 @@
+
+for i in 0..5
+do
+    cp template.html html/percentage$i.html
+    sed -i 's/PLACEHOLDER_WIDTH/$i/g' html/percentage$i.html
+done
