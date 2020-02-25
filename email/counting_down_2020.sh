@@ -7,16 +7,19 @@ dt=`python -c "from datetime import date as d; print (d(2020, 12, 31) - d.today(
 
 dt_text="there are $dt days left before 2020 ends"
 
+# config
+receiver="Mr./Mrs."
+sender="RadishMeeting"
 
 # prepare the text
 
 outfile=counting_down_2020.html
 
 text="Dear $receiver,<br> 
-<h4> ${dt_text} </h4> <br>
+<h3> ${dt_text} </h3> <br>
 Welcome to join my email list.<br> 
 Hope you enjoy it!<br> 
-from<br> ProgressBar20XX ( $sender ) <br> 
+from<br> ProgressBar20XX ( written by $sender ) <br> 
 $( date )
 "
 # clear the file first and then add the text
