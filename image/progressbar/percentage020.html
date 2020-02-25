@@ -34,7 +34,7 @@ function move() {
     i = 1;
     var elem = document.getElementById("myBar");
     var width = 0;
-    var id = setInterval(frame, 5);
+    var id = setInterval(frame, 100);
     function frame() {
       if (width >= max_width) {
         clearInterval(id);
@@ -47,6 +47,14 @@ function move() {
     }
   }
 }
+window.addEventListener("DOMContentLoaded", function() {
+        // do stuff
+        move();
+    }, false);
+  
+
+}
+  
 </script>
 
 </body>
