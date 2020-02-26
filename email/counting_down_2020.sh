@@ -5,6 +5,8 @@
 
 dt=`python -c "from datetime import date as d; print (d(2020, 12, 31) - d.today() ).days"`
 
+percentage=`python -c "from datetime import date as d; print 100-(d(2020, 12, 31) - d.today() ).days*100/365"`
+
 dt_text="there are $dt days left before 2020 ends"
 
 # config
@@ -25,6 +27,7 @@ $( date )
 
 
 bar=`cat template2.html`
+bar=`cat ../static/progressbar/body_html/percentage$percentage.html`
 
 # clear the file first and then add the text
 echo > $outfile
