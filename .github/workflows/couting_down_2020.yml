@@ -16,7 +16,8 @@ jobs:
       run: |
         echo "create content in counting_down_2020.html"
         cd email/
-        python3 sending_email.py #./counting_down_2020.sh
+        #python3 sending_email.py
+        ./counting_down_2020.sh
     # commit and push if needed
     - name: Commit files
       run: |
