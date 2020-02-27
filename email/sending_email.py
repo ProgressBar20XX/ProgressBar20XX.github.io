@@ -12,8 +12,8 @@ Subject: Hi there
 
 This message is sent from Python."""
 
-context = ssl.create_default_context()
-with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
+context_ssl = ssl.create_default_context()
+with smtplib.SMTP_SSL(smtp_server, port, context=context_ssl) as server:
     print('login...')
     server.login(sender_email, password)
     print('sending...')
