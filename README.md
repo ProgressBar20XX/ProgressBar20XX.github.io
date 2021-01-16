@@ -39,4 +39,5 @@ Create an issue if you want an email subscription
 * [crontab guru](https://crontab.guru/)   The quick and simple editor for cron schedule expressions by Cronitor
 * [github push actions](https://github.com/ad-m/github-push-action)
 * [graphics: Python progress bar](https://github.com/verigak/progress)
-  
+* [python send mails](https://julien.danjou.info/sending-emails-in-python-tutorial-code-examples/)  
+* [yagmail - the python gmail tool](https://pypi.org/project/yagmail/)
