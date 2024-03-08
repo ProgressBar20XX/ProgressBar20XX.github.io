@@ -3,11 +3,11 @@
 
 # calculate the time duration
 
-dt=`python -c "from datetime import date as d; print (d(2020, 12, 31) - d.today() ).days"`
+dt=`python -c "from datetime import date as d; print (d(2024, 12, 31) - d.today() ).days"`
 
-percentage=`python -c "from datetime import date as d; print 100-(d(2020, 12, 31) - d.today() ).days*100/365"`
+percentage=`python -c "from datetime import date as d; print 100-(d(2024, 12, 31) - d.today() ).days*100/365"`
 
-dt_text="there are $dt days left before 2020 ends"
+dt_text="there are $dt days left before 2024 ends"
 
 # config
 receiver="Mr./Mrs."
